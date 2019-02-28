@@ -25,6 +25,7 @@ public class SlideShow {
 	}
 
 	public Integer calculateTotalScore(){
+		this.slides.stream().mapToInt(slide -> slide.)
 		return this.totalScore
 	}
 
