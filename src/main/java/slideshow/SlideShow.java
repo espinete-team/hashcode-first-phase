@@ -27,8 +27,12 @@ public class SlideShow {
 
 	public Integer calculateTotalScore(){
 		// this.totalScore = this.slides.stream().map( (Slide a, Slide b)->  a.getInterest(b)).;
-		return 0;
-
+		Integer count = 0;
+		for(int i = 0; i<slides.size()-1; i++ ){
+			count += this.slides.get(i).getInterest(this.slides.get(i+1));
+		}
+		this.totalScore = count;
+		return this.totalScore;
 	}
 
 	public Integer swap(Integer slide1, Integer slide2){
