@@ -44,10 +44,10 @@ public class RetrieveSlidesAsComeAlgorithmTest {
         photo4.setOrientation("H");
 
         photos.add(photo);
-        photos.add(photo2);
         photos.add(photo3);
-        photos.add(photo4);
+        photos.add(photo2);
         photos.add(photo5);
+        photos.add(photo4);
         return photos;
     }
 
