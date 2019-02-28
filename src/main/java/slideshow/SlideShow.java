@@ -21,12 +21,12 @@ public class SlideShow {
 	}
 
 	public Integer getTotalScore(){
-		return this.totalScore
+		return this.totalScore;
 	}
 
 	public Integer calculateTotalScore(){
-		this.slides.stream().mapToInt(slide -> slide.)
-		return this.totalScore
+		this.totalScore = this.slides.parallelStream().reduce(0,  (a, b) -> a.getInterest(b));
+
 	}
 
 	public Integer swap(Integer slide1, Integer slide2){
