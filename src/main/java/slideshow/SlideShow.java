@@ -30,9 +30,14 @@ public class SlideShow {
 		return this.totalScore;
 	}
 
-	public Integer calculateTotalScore(){
-		return this.totalScore;
-	}
+    public Integer calculateTotalScore(){
+        Integer count = 0;
+        for(int i = 0; i<=slides.size()-1; i++ ){
+            count += this.slides.get(i).getInterest(this.slides.get(i+1));
+        }
+        this.totalScore = count;
+        return this.totalScore;
+    }
 
 	public Integer swap(Integer slide1, Integer slide2){
 		this.substractBoundaries(slide1);
