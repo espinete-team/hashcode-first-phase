@@ -1,5 +1,6 @@
 package slideshow;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +15,10 @@ public class SlideShow {
 	private List<Slide> slides;
 
 	public List<Slide> getSlides() {
+		if(slides == null) {
+			slides = new ArrayList<Slide>();
+		}
+		
 		return slides;
 	}
 
@@ -26,12 +31,6 @@ public class SlideShow {
 	}
 
 	public Integer calculateTotalScore(){
-		// this.totalScore = this.slides.stream().map( (Slide a, Slide b)->  a.getInterest(b)).;
-		Integer count = 0;
-		for(int i = 0; i<slides.size()-1; i++ ){
-			count += this.slides.get(i).getInterest(this.slides.get(i+1));
-		}
-		this.totalScore = count;
 		return this.totalScore;
 	}
 
