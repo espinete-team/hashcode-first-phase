@@ -48,7 +48,7 @@ public abstract class Slide {
 		return Math.min(interesect, Math.min(own, theirs));
 	}
 
-	public static Integer interestBetween(Slide slide1, Slide, Slide slide2){
+	public static Integer interestBetween(Slide slide1,  Slide slide2){
 		return slide1.getInterest(slide2);
 	}
 

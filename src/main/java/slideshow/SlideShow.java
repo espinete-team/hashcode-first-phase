@@ -1,6 +1,7 @@
 package slideshow;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SlideShow {
 
@@ -25,7 +26,8 @@ public class SlideShow {
 	}
 
 	public Integer calculateTotalScore(){
-		this.totalScore = this.slides.parallelStream().reduce(0,  (a, b) -> a.getInterest(b));
+		// this.totalScore = this.slides.stream().map( (Slide a, Slide b)->  a.getInterest(b)).;
+		return 0;
 
 	}
 
