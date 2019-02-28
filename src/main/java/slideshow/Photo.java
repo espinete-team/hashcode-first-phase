@@ -1,12 +1,13 @@
 package slideshow;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Photo {
 
 	private int id;
 	private String orientation;
-	private Set<String> tags;
+	private List<String> tags;
 
 	public int getId() {
 		return id;
@@ -24,11 +25,15 @@ public class Photo {
 		this.orientation = orientation;
 	}
 
-	public Set<String> getTags() {
+	public List<String> getTags() {
+		if (tags == null) {
+			tags = new ArrayList<String>();
+		}
+
 		return tags;
 	}
 
-	public void setTags(Set<String> tags) {
+	public void setTags(List<String> tags) {
 		this.tags = tags;
 	}
 

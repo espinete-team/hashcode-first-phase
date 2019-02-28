@@ -1,24 +1,23 @@
 package slideshow;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 
-public class RetrieveSlidesAsComeAlgorithmTest {
+public class RetrieveHorizontalSlidesFirstAlgorithmTest {
 
     @Test
     public void calculateSlideShow() {
         List<Photo> photos = createRandomPhotos();
-        AlgorithmSolution algorithmSolution = new RetrieveSlidesAsComeAlgorithm();
+        AlgorithmSolution algorithmSolution = new RetrieveHorizontalSlidesFirstAlgorithm();
         SlideShow slideShow = algorithmSolution.calculateSlideShow(photos);
         assertEquals(4, slideShow.getSlides().size());
         assertTrue(slideShow.getSlides().get(0) instanceof HorinzontalSlide);
         assertTrue(slideShow.getSlides().get(1) instanceof HorinzontalSlide);
-        assertTrue(slideShow.getSlides().get(2) instanceof VerticalSlide);
-        assertTrue(slideShow.getSlides().get(3) instanceof HorinzontalSlide);
+        assertTrue(slideShow.getSlides().get(2) instanceof HorinzontalSlide);
+        assertTrue(slideShow.getSlides().get(3) instanceof VerticalSlide);
     }
 
     private List<Photo> createRandomPhotos() {
@@ -50,5 +49,4 @@ public class RetrieveSlidesAsComeAlgorithmTest {
         photos.add(photo5);
         return photos;
     }
-
 }
