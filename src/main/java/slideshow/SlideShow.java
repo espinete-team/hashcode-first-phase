@@ -32,7 +32,7 @@ public class SlideShow {
 
     public Integer calculateTotalScore(){
         Integer count = 0;
-        for(int i = 0; i<=slides.size()-1; i++ ){
+        for(int i = 0; i<=slides.size()-2; i++ ){
             count += this.slides.get(i).getInterest(this.slides.get(i+1));
         }
         this.totalScore = count;
