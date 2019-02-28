@@ -4,8 +4,17 @@ import java.util.Set;
 
 public class Photo {
 
+	private int id;
 	private String orientation;
 	private Set<String> tags;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getOrientation() {
 		return orientation;
@@ -22,5 +31,5 @@ public class Photo {
 	public void setTags(Set<String> tags) {
 		this.tags = tags;
 	}
-	
+
 }
