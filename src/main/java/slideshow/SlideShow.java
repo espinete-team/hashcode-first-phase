@@ -30,6 +30,10 @@ public class SlideShow {
 		return this.totalScore;
 	}
 
+	public void setTotalScore(Integer score){
+		this.totalScore = score;
+	}
+
     public Integer calculateTotalScore(){
         Integer count = 0;
         for(int i = 0; i<=slides.size()-2; i++ ){
