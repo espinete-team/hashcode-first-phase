@@ -1,5 +1,7 @@
 package slideshow;
 
+import java.util.*;
+
 public class VerticalSlide extends Slide {
 
 	private Photo photo1;
@@ -21,4 +23,10 @@ public class VerticalSlide extends Slide {
 		this.photo2 = photo2;
 	}
 
+	@Override
+	List<String> getTags() {
+		Set<String> commonTags =   new HashSet<String>(this.photo1.getTags());
+		commonTags.addAll(new HashSet<String>(this.photo2.getTags()));
+		return new ArrayList(commonTags);
+	}
 }

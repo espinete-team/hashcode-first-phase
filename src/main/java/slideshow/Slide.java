@@ -8,9 +8,7 @@ public abstract class Slide {
 	
 	protected List<String> tags;
 
-	public List<String> getTags() {
-		return tags;
-	}
+	abstract List<String> getTags();
 
 	public void setTags(List<String> tags) {
 		this.tags = tags;
@@ -21,15 +19,15 @@ public abstract class Slide {
 	}
 
 	private Integer getIntersectionScore(Slide slide){
-		Set<String> own = new HashSet<>(this.tags);
+		Set<String> own = new HashSet<>(this.getTags());
 		Set<String> theirs = new HashSet<>(slide.getTags());
 		own.retainAll(theirs);
 		return own.size();
 	}
 
 	private Integer getOwnScore(Slide slide){
-		Set<String> own = new HashSet<>(this.tags);
-		Set<String> own2 = new HashSet<>(this.tags);
+		Set<String> own = new HashSet<>(this.getTags());
+		Set<String> own2 = new HashSet<>(this.getTags());
 		Set<String> theirs = new HashSet<>(slide.getTags());
 		own.retainAll(theirs);
 		own2.removeAll(own);
@@ -37,7 +35,7 @@ public abstract class Slide {
 	}
 
 	private Integer getTheirsScore(Slide slide){
-		Set<String> own = new HashSet<>(this.tags);
+		Set<String> own = new HashSet<>(this.getTags());
 		Set<String> theirs = new HashSet<>(slide.getTags());
 		own.retainAll(theirs);
 		theirs.removeAll(own);

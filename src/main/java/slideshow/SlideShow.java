@@ -42,6 +42,8 @@ public class SlideShow {
 		Collections.swap(this.slides, slide1, slide2);
 		this.addBoundaries(slide1);
 		this.addBoundaries(slide2);
+		return this.totalScore;
+
 	}
 
 	private void substractBoundaries(Integer position){
