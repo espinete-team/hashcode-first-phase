@@ -24,6 +24,10 @@ public class SlideShow {
 		return this.totalScore
 	}
 
+	public Integer calculateTotalScore(){
+		return this.totalScore
+	}
+
 	public Integer swap(Integer slide1, Integer slide2){
 		return totalScore;
 	}
