@@ -16,11 +16,11 @@ public class ReadInput {
 	
 	private String input;
 	
-	public ReadInput(String input) {
-		this.input = input;
+	public ReadInput(String path) {
+		this.input = getStringFromFile(path);
 	}
 
-	public String getStringFromFile() {
+	public String getStringFromFile(String input) {
 		String content = "";
 
 		try {
@@ -38,9 +38,9 @@ public class ReadInput {
 		return Integer.valueOf(number);
 	}
 
-	public List<Photo> getPhotosFromString(String allContent) {
-		String[] content = allContent.split("\n");
-		List<Photo> photos = new ArrayList<Photo>();
+	public List<Photo> getPhotosFromString() {
+		String[] content = input.split("\n");
+		List<Photo> photos = new ArrayList<>();
 
 		for (int i = 1; i < content.length; i++) {
 			String word[] = content[i].split(" ");

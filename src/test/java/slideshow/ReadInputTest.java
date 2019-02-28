@@ -18,19 +18,8 @@ public class ReadInputTest {
 	}
 	
 	@Test
-	public void testWhenGetInputReturnsString() {
-		Assert.assertEquals(String.class, readInput.getStringFromFile().getClass());
-	}
-	
-	@Test
-	public void testWhenGetFirstLineReturnsInteger() {
-		int firstLine = readInput.getNumberOfPhotos(readInput.getStringFromFile());
-		Assert.assertEquals(4, firstLine);
-	}
-	
-	@Test
 	public void testWhenStringisPassedReturnsPhotoCollection() {
-		List<Photo> photos = readInput.getPhotosFromString(readInput.getStringFromFile());
+		List<Photo> photos = readInput.getPhotosFromString();
 		
 		Assert.assertEquals(4, photos.size());
 		
