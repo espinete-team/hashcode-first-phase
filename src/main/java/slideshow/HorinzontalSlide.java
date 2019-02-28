@@ -1,8 +1,12 @@
 package slideshow;
 
+import java.util.List;
+
 public class HorinzontalSlide extends Slide {
 
 	private Photo photo;
+
+
 
 	public Photo getPhoto() {
 		return photo;
@@ -12,4 +16,8 @@ public class HorinzontalSlide extends Slide {
 		this.photo = photo;
 	}
 
+	@Override
+	List<String> getTags() {
+		return photo.getTags();
+	}
 }

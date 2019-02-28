@@ -1,8 +1,8 @@
 package slideshow;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SlideShow {
 
@@ -35,7 +35,31 @@ public class SlideShow {
 	}
 
 	public Integer swap(Integer slide1, Integer slide2){
-		return totalScore;
+		this.substractBoundaries(slide1);
+		this.substractBoundaries(slide2);
+		Collections.swap(this.slides, slide1, slide2);
+		this.addBoundaries(slide1);
+		this.addBoundaries(slide2);
+		return this.totalScore;
+
+	}
+
+	private void substractBoundaries(Integer position){
+		if(position>0){
+			this.totalScore = this.totalScore - this.slides.get(position).getInterest(this.slides.get(position-1));
+		}
+		if(position<this.slides.size()-1){
+			this.totalScore = this.totalScore - this.slides.get(position).getInterest(this.slides.get(position+1));
+		}
+	}
+
+	private void addBoundaries(Integer position){
+		if(position>0){
+			this.totalScore = this.totalScore + this.slides.get(position).getInterest(this.slides.get(position-1));
+		}
+		if(position<this.slides.size()-1){
+			this.totalScore = this.totalScore + this.slides.get(position).getInterest(this.slides.get(position+1));
+		}
 	}
 
 
